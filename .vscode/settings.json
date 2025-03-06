@@ -1,0 +1,8 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/845af220-bace-45d4-9979-ed5993293ae3/resourceGroups/Maternity/providers/Microsoft.Web/sites/sdacms",
+    "appService.deploySubpath": ".",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ]
+}
