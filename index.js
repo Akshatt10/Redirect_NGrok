@@ -3,7 +3,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const NGROK_API_URL = 'https://d3f1-116-68-245-229.ngrok-free.app/api';
+const NGROK_API_URL = 'https://2272-116-68-245-229.ngrok-free.app/api';
 
 // Debugging middleware
 app.use((req, res, next) => {
@@ -29,7 +29,6 @@ app.use(
     })
 );
 
-// Start server
 app.listen(PORT, () => {
     console.log(`Proxy server running at http://localhost:${PORT}`);
 });
