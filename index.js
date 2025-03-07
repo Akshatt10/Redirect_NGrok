@@ -5,20 +5,22 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const NGROK_API_URL = 'https://0bed-116-68-245-229.ngrok-free.app/api';
 
-// Debugging middleware
 app.use((req, res, next) => {
     console.log(`Received request: ${req.method} ${req.originalUrl}`);
     next();
 });
 
-// Proxy requests with /api prefix
 app.use(
     '/api',
     createProxyMiddleware({
         target: NGROK_API_URL,
         changeOrigin: true,
         logLevel: 'debug',
+        secure: false,
         pathRewrite: { '^/api': '' },
+        headers: {
+            'Connection': 'keep-alive'  
+        },
         onProxyReq: (proxyReq, req) => {
             console.log(`Proxying request to: ${NGROK_API_URL}${req.originalUrl}`);
         },
