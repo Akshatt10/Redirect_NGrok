@@ -3,7 +3,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const NGROK_API_URL = 'https://49e8-14-96-97-75.ngrok-free.app/api';
+const NGROK_API_URL = 'https://bb35-14-96-97-75.ngrok-free.app/api';
 
 app.use((req, res, next) => {
     console.log(`Received request: ${req.method} ${req.originalUrl}`);
